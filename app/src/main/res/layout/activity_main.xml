@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/u6_normal"
+    >
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip">
+
+        <EditText
+            android:id="@+id/main_contact_et"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/u21_normal"
+            android:hint=" 输入收件人姓名或号码"/>
+        <Button
+            android:id="@+id/main_rank_btn"
+            android:layout_width="40dip"
+            android:layout_height="wrap_content"
+            android:text="v"/>
+        <Button
+            android:id="@+id/main_contact_btn"
+            android:layout_width="40dip"
+            android:layout_height="wrap_content"
+            android:text="+"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dip"
+        android:layout_marginTop="200dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip">
+
+        <EditText
+            android:id="@+id/main_message_et"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/u21_normal"
+            android:hint=" 输入短信内容"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/main_wordNum_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="字数：1/180"/>
+            <Button
+                android:id="@+id/main_send_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
