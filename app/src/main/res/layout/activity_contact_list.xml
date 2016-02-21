@@ -16,7 +16,7 @@
         android:hint=" 搜索联系人"/>
 
     <ListView
-        android:id="@+id/contactList_lv"
+        android:id="@+id/contactList_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

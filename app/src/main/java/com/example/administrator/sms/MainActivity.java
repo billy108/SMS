@@ -9,9 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int MainActivity = 0;
+
     private Button mRankBtn, mContactBtn, mSendBtn;
+    private EditText mName;
 
     private Intent i;
 
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         mSendBtn = (Button) findViewById(R.id.main_send_btn);
         mSendBtn.setOnClickListener(listener);
+
+        mName = (EditText) findViewById(R.id.main_contact_et);
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.main_contact_btn:
                     i = new Intent(MainActivity.this, ContactListActivity.class);
-                    startActivity(i);
+                    startActivityForResult(i, MainActivity);
                     break;
                 case R.id.main_send_btn:
 
@@ -62,8 +68,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        i = new Intent(MainActivity.this, SetupRankActivity.class);
+        i = new Intent(MainActivity.this, RankListActivity.class);
         startActivity(i);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == MainActivity && resultCode == ContactListActivity.ContactListActivity){
+            mName.setText(data.getCharSequenceExtra("number") + "(" + data.getCharSequenceExtra("name") + ")");
+        }
     }
 }
