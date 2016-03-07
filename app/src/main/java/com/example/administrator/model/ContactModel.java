@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.example.administrator.sms.R;
@@ -49,10 +51,23 @@ public class ContactModel{
         return list;
     }
 
+    private class ArrayFilter extends Filter {
+
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            return null;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+
+        }
+    }
+
     public BaseAdapter contactAdapter(){
         final List<ContactData> list = getPhoneContacts();
 
-        BaseAdapter adapter = new BaseAdapter() {
+        final BaseAdapter adapter = new BaseAdapter() {
             @Override
             public int getCount() {
                 return list.size();
@@ -80,7 +95,6 @@ public class ContactModel{
 
                 name.setText(list.get(position).getName().toString());
                 number.setText(list.get(position).getNumber().toString());
-
 
                 return convertView;
             }

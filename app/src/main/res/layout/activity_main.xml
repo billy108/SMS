@@ -57,7 +57,7 @@
                 android:id="@+id/main_wordNum_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="字数：1/180"/>
+                android:text="字数：0/180"/>
             <Button
                 android:id="@+id/main_send_btn"
                 android:layout_width="wrap_content"

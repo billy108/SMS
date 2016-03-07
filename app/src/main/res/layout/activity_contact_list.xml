@@ -5,15 +5,14 @@
     android:orientation="vertical"
     android:background="@drawable/u6_normal">
 
-    <EditText
-        android:id="@+id/contactList_et"
+    <AutoCompleteTextView
+        android:id="@+id/contactList_autoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="40dip"
         android:background="@drawable/u21_normal"
-        android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip"
         android:layout_marginTop="10dip"
-        android:hint=" 搜索联系人"/>
+        android:hint="搜索联系人"/>
 
     <ListView
         android:id="@+id/contactList_listView"
